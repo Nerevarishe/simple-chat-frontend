@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const FooterStyled = styled.ul`
+const NavigationButtonsBlockStyled = styled.ul`
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -12,4 +12,4 @@ const FooterStyled = styled.ul`
   list-style: none;
 `;
 
-export default FooterStyled;
+export default NavigationButtonsBlockStyled;
