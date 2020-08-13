@@ -6,7 +6,7 @@ const MainPosition = styled.main`
   min-width: 320px;
   width: 100%;
   min-height: 100vh;
-  padding: ${rem("45px 0")};
+  padding: ${rem("45px 16px")};
 
   @media (min-width: 1200px) {
     // padding: 40px 65px 40px 209px;

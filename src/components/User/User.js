@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import UserPosition from "./UserPosition";
 import UserStyled from "./UserStyled";
 import Avatar from "../Avatar";
-import { Bold24Font } from "../fonts/Fonts";
 import { withTheme } from "styled-components";
 import UserUsernameWrapper from "./UserUsernameWrapper";
 import UserAvatarWrapper from "./UserAvatarWrapper";
@@ -15,10 +14,8 @@ const User = ({ avatarUrl, username, myUser, oppositeUser, theme }) => {
         <UserAvatarWrapper>
           <Avatar imgUrl={avatarUrl} />
         </UserAvatarWrapper>
-        <UserUsernameWrapper>
-          <Bold24Font style={{ color: theme.colors.whiteColor }}>
-            {username}
-          </Bold24Font>
+        <UserUsernameWrapper style={{ color: theme.colors.whiteColor }}>
+          {username}
         </UserUsernameWrapper>
       </UserStyled>
     </UserPosition>
