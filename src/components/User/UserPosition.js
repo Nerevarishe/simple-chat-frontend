@@ -1,10 +1,9 @@
 import styled from "styled-components";
-import { rem } from "../../../utils/utils";
+import { rem } from "../../utils/utils";
 
-const HeaderAvatarWrapper = styled.div`
+const UserPosition = styled.div`
   margin: ${rem("5px 8px")};
 
-  // Extra large devices (large desktops, 1200px and up)
   @media (min-width: 1200px) {
     margin: 0;
     width: 60px;
@@ -13,4 +12,4 @@ const HeaderAvatarWrapper = styled.div`
   }
 `;
 
-export default HeaderAvatarWrapper;
+export default UserPosition;

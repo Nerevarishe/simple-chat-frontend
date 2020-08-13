@@ -1,10 +1,12 @@
 import React, { createContext, useReducer } from "react";
 import reducer from "./reducer";
+import avatar from "../assets/img/svg/avatar.svg";
 
 const initialState = {
   auth: {
     isAuth: true,
-    username: "John Doe"
+    username: "John Doe",
+    avatarUrl: avatar,
   },
   components: {
     header: {

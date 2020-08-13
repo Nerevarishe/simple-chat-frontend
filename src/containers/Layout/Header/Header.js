@@ -1,25 +1,18 @@
 import React, { useContext } from "react";
-import { withTheme } from "styled-components";
 import HeaderPosition from "./HeaderPosition";
 import HeaderStyled from "./HeaderStyled";
-import HeaderAvatarWrapper from "./HeaderAvatarWrapper";
-import Avatar from "../../../components/Avatar";
-import HeaderUsernameWrapper from "./HeaderUsernameWrapper";
-import { Bold14Font } from "../../../components/fonts/Fonts";
 import LogoutButton from "../../../components/buttons/LogoutButton";
 import HeaderLogoutButtonWrapper from "./HeaderLogoutButtonWrapper";
 import HeaderNavigationButtonsPosition from "./HeaderNavigationButtonsPosition";
 import NavigationButtonsBlock from "../../../components/buttons/NavigationButtonsBlock";
 import { TOGGLE_HEADER_SIDE_BAR } from "../../../globalStore/actions";
-
-import avatarImg from "../../../assets/img/svg/avatar.svg";
 import useWindowDimensions from "../../../hooks/useWindowDimensions";
 import { Context } from "../../../globalStore/store";
+import User from "../../../components/User";
 
-const Header = (props) => {
+const Header = () => {
   // eslint-disable-next-line no-unused-vars
   const { width, height } = useWindowDimensions();
-  // eslint-disable-next-line no-unused-vars
   const [state, dispatch] = useContext(Context);
 
   const toggleSidebarHandler = () => {
@@ -35,14 +28,7 @@ const Header = (props) => {
       onMouseLeave={toggleSidebarHandler}
     >
       <HeaderStyled>
-        <HeaderAvatarWrapper>
-          <Avatar imgUrl={avatarImg} />
-        </HeaderAvatarWrapper>
-        <HeaderUsernameWrapper>
-          <Bold14Font style={{ color: props.theme.colors.whiteColor }}>
-            John Doe
-          </Bold14Font>
-        </HeaderUsernameWrapper>
+        <User avatarUrl={state.auth.avatarUrl} username={state.auth.username}/>
         <HeaderNavigationButtonsPosition>
           <NavigationButtonsBlock />
         </HeaderNavigationButtonsPosition>
@@ -54,4 +40,4 @@ const Header = (props) => {
   );
 };
 
-export default withTheme(Header);
+export default Header;
