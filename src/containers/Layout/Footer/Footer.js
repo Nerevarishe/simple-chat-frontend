@@ -4,14 +4,21 @@ import FooterStyled from "./FooterStyled";
 import ChatButton from "../../../components/buttons/ChatButton";
 import PeopleButton from "../../../components/buttons/PeopleButton";
 import ChatListButton from "../../../components/buttons/ChatListButton";
+import FooterButtonWrapper from "./FooterButtonWrapper";
 
 const Footer = () => {
   return (
     <FooterPosition>
       <FooterStyled>
-        <ChatButton />
-        <PeopleButton />
-        <ChatListButton />
+        <FooterButtonWrapper>
+          <ChatButton />
+        </FooterButtonWrapper>
+        <FooterButtonWrapper>
+          <PeopleButton />
+        </FooterButtonWrapper>
+        <FooterButtonWrapper>
+          <ChatListButton />
+        </FooterButtonWrapper>
       </FooterStyled>
     </FooterPosition>
   );

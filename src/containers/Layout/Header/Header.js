@@ -7,6 +7,8 @@ import Avatar from "../../../components/Avatar";
 import HeaderUsernameWrapper from "./HeaderUsernameWrapper";
 import { Bold14Font } from "../../../components/fonts/Fonts";
 import HeaderSideBar from "./HeaderSideBar/HeaderSideBar";
+import LogoutButton from "../../../components/buttons/LogoutButton";
+import HeaderLogoutButtonWrapper from "./HeaderLogoutButtonWrapper";
 
 const Header = (props) => {
   return (
@@ -20,7 +22,10 @@ const Header = (props) => {
             John Doe
           </Bold14Font>
         </HeaderUsernameWrapper>
-        <HeaderSideBar/>
+        <HeaderLogoutButtonWrapper>
+          <LogoutButton />
+        </HeaderLogoutButtonWrapper>
+        <HeaderSideBar />
       </HeaderStyled>
     </HeaderPosition>
   );

@@ -2,9 +2,11 @@ import styled from "styled-components";
 import { rem } from "../../../utils/utils";
 
 const BaseButton = styled.button`
-  width: ${rem("40px")};
-  height: ${rem("40px")};
-  font-size: ${rem("40px")};
+  // width: ${rem("40px")};
+  // height: ${rem("40px")};
+  // width: 100%;
+  // height: 100%;
+  // font-size: ${rem("40px")};
   color: ${(props) => props.theme.colors.whiteColor};
   outline: none;
   border: none;
