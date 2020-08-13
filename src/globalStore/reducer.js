@@ -14,6 +14,12 @@ const reducer = (state, action) => {
           },
         },
       };
+
+    case actions.SET_PATH:
+      return {
+        ...state,
+        path: action.data,
+      };
     default:
       return state;
   }

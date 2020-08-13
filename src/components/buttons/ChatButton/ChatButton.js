@@ -1,9 +1,13 @@
 import React from "react";
-import BaseButton from "../BaseButton/BaseButton";
+import BaseButton from "../BaseButton";
 
 const ChatButton = () => {
   return (
-    <BaseButton iconClassName="icon-chat-icon" buttonText="Current chat" />
+    <BaseButton
+      iconClassName="icon-chat-icon"
+      buttonText="Current chat"
+      navigateToPath="/chat_page"
+    />
   );
 };
 

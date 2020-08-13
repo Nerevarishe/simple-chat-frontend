@@ -8,6 +8,7 @@ const initialState = {
     username: "John Doe",
     avatarUrl: avatar,
   },
+  path: {},
   components: {
     header: {
       isHeaderSideBarPulled: false,
