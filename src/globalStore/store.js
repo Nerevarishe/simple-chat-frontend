@@ -2,7 +2,10 @@ import React, { createContext, useReducer } from "react";
 import reducer from "./reducer";
 
 const initialState = {
-  auth: {},
+  auth: {
+    isAuth: true,
+    username: "John Doe"
+  },
   components: {
     header: {
       isHeaderSideBarPulled: false,
