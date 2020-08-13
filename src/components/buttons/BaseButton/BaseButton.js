@@ -1,24 +1,20 @@
-import styled from "styled-components";
-import { rem } from "../../../utils/utils";
+import React from "react";
+import PropTypes from "prop-types";
+import BaseButtonStyled from "./BaseButtonStyled";
+import BaseButtonTextStyled from "./BaseButtonTextStyled";
 
-const BaseButton = styled.button`
-  // width: ${rem("40px")};
-  // height: ${rem("40px")};
-  // width: 100%;
-  // height: 100%;
-  // font-size: ${rem("40px")};
-  color: ${(props) => props.theme.colors.whiteColor};
-  outline: none;
-  border: none;
-  padding: 0;
-  background: none;
-  cursor: pointer;
-  :hover,
-  :focus,
-  :active {
-    color: ${(props) => props.theme.colors.orangeColor};
-    outline: none;
-  }
-`;
+const BaseButton = ({ iconClassName, buttonText }) => {
+  return (
+    <BaseButtonStyled>
+      <span className={iconClassName} />
+      <BaseButtonTextStyled>{buttonText}</BaseButtonTextStyled>
+    </BaseButtonStyled>
+  );
+};
+
+BaseButton.propTypes = {
+  iconClassName: PropTypes.string,
+  buttonText: PropTypes.string
+}
 
 export default BaseButton;

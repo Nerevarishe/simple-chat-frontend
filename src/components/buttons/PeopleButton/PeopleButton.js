@@ -1,11 +1,9 @@
 import React from "react";
-import BaseButton from "../BaseButton";
+import BaseButton from "../BaseButton/BaseButton";
 
 const PeopleButton = ({ children }) => {
   return (
-    <BaseButton>
-      <span className="icon-people-icon" />
-    </BaseButton>
+    <BaseButton iconClassName="icon-people-icon" buttonText="Users in chat" />
   );
 };
 

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import withContext from "../../../hoc/withContext";
 
 const HeaderStyled = styled.div`
   width: 100%;
@@ -9,9 +10,11 @@ const HeaderStyled = styled.div`
 
   @media (min-width: 1200px) {
     flex-direction: column;
-    align-items: center;
+    // align-items: start;
+    ${(props) =>
+      props.state.header.isHeaderSideBarPulled ? "align-items: start;" : null}
     padding: 39px 42px;
   }
 `;
 
-export default HeaderStyled;
+export default withContext(HeaderStyled);

@@ -27,3 +27,10 @@ export const Bold14Font = styled(BaseFont)`
   font-size: ${rem("14px")};
   line-height: ${rem("16px")};
 `;
+
+// Not responsive fonts
+export const Bold24Font = styled(BaseFont)`
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+`;

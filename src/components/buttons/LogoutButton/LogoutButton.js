@@ -1,12 +1,8 @@
 import React from "react";
-import BaseButton from "../BaseButton";
+import BaseButton from "../BaseButton/BaseButton";
 
 const LogoutButton = ({ children }) => {
-  return (
-    <BaseButton>
-      <span className="icon-logout-icon" />
-    </BaseButton>
-  );
+  return <BaseButton iconClassName="icon-logout-icon" buttonText="Logout" />;
 };
 
 export default LogoutButton;
