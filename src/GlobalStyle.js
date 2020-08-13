@@ -49,13 +49,18 @@ const GlobalStyle = createGlobalStyle`
   }
   
   html {
-  box-sizing: border-box;
-  font-size: 16px;
+    box-sizing: border-box;
+    font-size: 16px;
+    height: 100%;
   }
   *,
   *:before,
   *:after {
     box-sizing: inherit;
+  }
+  
+  body {
+    height: 100%;
   }
   
   img {
