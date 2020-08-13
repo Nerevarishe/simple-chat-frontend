@@ -9,6 +9,8 @@ import { Bold14Font } from "../../../components/fonts/Fonts";
 import HeaderSideBar from "./HeaderSideBar/HeaderSideBar";
 import LogoutButton from "../../../components/buttons/LogoutButton";
 import HeaderLogoutButtonWrapper from "./HeaderLogoutButtonWrapper";
+import HeaderNavigationButtonsPosition from "./HeaderNavigationButtonsPosition";
+import NavigationButtonsBlock from "../../../components/buttons/NavigationButtonsBlock";
 
 const Header = (props) => {
   return (
@@ -22,10 +24,13 @@ const Header = (props) => {
             John Doe
           </Bold14Font>
         </HeaderUsernameWrapper>
+        <HeaderNavigationButtonsPosition>
+          <NavigationButtonsBlock />
+        </HeaderNavigationButtonsPosition>
         <HeaderLogoutButtonWrapper>
           <LogoutButton />
         </HeaderLogoutButtonWrapper>
-        <HeaderSideBar />
+        {/*<HeaderSideBar />*/}
       </HeaderStyled>
     </HeaderPosition>
   );

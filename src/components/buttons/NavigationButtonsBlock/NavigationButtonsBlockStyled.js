@@ -10,6 +10,11 @@ const NavigationButtonsBlockStyled = styled.ul`
   height: 100%;
   background: ${(props) => props.theme.colors.blackColor};
   list-style: none;
+  
+  @media (min-width: 1200px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 export default NavigationButtonsBlockStyled;
