@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import ChatButton from "../ChatButton";
 import PeopleButton from "../PeopleButton";
 import ChatListButton from "../ChatListButton";

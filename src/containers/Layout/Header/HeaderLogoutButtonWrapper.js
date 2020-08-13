@@ -8,7 +8,7 @@ const HeaderLogoutButtonWrapper = styled.div`
   font-size: ${rem("25px")};
   justify-content: flex-end;
   margin: ${rem("10px 16px 10px 0")};
-  
+
   @media (min-width: 1200px) {
     flex-direction: column;
     justify-content: flex-end;

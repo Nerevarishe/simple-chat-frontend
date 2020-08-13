@@ -5,7 +5,7 @@ import NavigationButtonsBlock from "../../../components/buttons/NavigationButton
 const Footer = () => {
   return (
     <FooterPosition>
-        <NavigationButtonsBlock/>
+      <NavigationButtonsBlock />
     </FooterPosition>
   );
 };
