@@ -6,18 +6,19 @@ import HeaderAvatarWrapper from "./HeaderAvatarWrapper";
 import Avatar from "../../../components/Avatar";
 import HeaderUsernameWrapper from "./HeaderUsernameWrapper";
 import { Bold14Font } from "../../../components/fonts/Fonts";
-import HeaderSideBar from "./HeaderSideBar/HeaderSideBar";
 import LogoutButton from "../../../components/buttons/LogoutButton";
 import HeaderLogoutButtonWrapper from "./HeaderLogoutButtonWrapper";
 import HeaderNavigationButtonsPosition from "./HeaderNavigationButtonsPosition";
 import NavigationButtonsBlock from "../../../components/buttons/NavigationButtonsBlock";
+
+import avatarImg from "../../../assets/img/svg/avatar.svg";
 
 const Header = (props) => {
   return (
     <HeaderPosition>
       <HeaderStyled>
         <HeaderAvatarWrapper>
-          <Avatar imgUrl={"LINK_TO_IMG"} />
+          <Avatar imgUrl={avatarImg} />
         </HeaderAvatarWrapper>
         <HeaderUsernameWrapper>
           <Bold14Font style={{ color: props.theme.colors.whiteColor }}>
