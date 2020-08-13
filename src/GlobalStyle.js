@@ -34,19 +34,15 @@ const GlobalStyle = createGlobalStyle`
   
   .icon-chat-icon:before {
     content: "\\e900";
-    color: #fff;
   }
   .icon-chat-list-icon:before {
     content: "\\e901";
-    color: #fff;
   }
   .icon-logout-icon:before {
     content: "\\e902";
-    color: #fff;
   }
   .icon-people-icon:before {
     content: "\\e903";
-    color: #fff;
   }
   .icon-send-button:before {
     content: "\\e905";
