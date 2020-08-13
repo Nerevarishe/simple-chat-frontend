@@ -1,13 +1,17 @@
 import { createGlobalStyle } from "styled-components";
+import SimpleChatFontEot from "./assets/fonts/simple-chat-app.eot";
+import SimpleChatFontTtf from "./assets/fonts/simple-chat-app.ttf";
+import SimpleChatFontWoff from "./assets/fonts/simple-chat-app.woff";
+import SimpleChatFontSvg from "./assets/fonts/simple-chat-app.svg";
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
   font-family: 'simple-chat-app';
-  src:  url('fonts/simple-chat-app.eot?jz5ixr');
-  src:  url('fonts/simple-chat-app.eot?jz5ixr#iefix') format('embedded-opentype'),
-    url('./assets/fonts/simple-chat-app.ttf?jz5ixr') format('truetype'),
-    url('./assets/fonts/simple-chat-app.woff?jz5ixr') format('woff'),
-    url('./assets/fonts/simple-chat-app.svg?jz5ixr#simple-chat-app') format('svg');
+  src:  url('${SimpleChatFontEot}?jz5ixr');
+  src:  url('${SimpleChatFontEot}?jz5ixr#iefix') format('embedded-opentype'),
+    url('${SimpleChatFontTtf}?jz5ixr') format('truetype'),
+    url('${SimpleChatFontWoff}?jz5ixr') format('woff'),
+    url('${SimpleChatFontSvg}?jz5ixr#simple-chat-app') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;

@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import Header from "./containers/Layout/Header";
+import Footer from "./containers/Layout/Footer";
 import Theme from "./theme";
 import GlobalStyle from "./GlobalStyle";
 
@@ -10,7 +11,7 @@ function App() {
         <GlobalStyle />
         <Header />
         {/*<Router />*/}
-        {/* <Footer /> */}
+        <Footer />
       </Theme>
     </Fragment>
   );
