@@ -3,19 +3,22 @@ import PropTypes from "prop-types";
 import UserPosition from "./UserPosition";
 import UserStyled from "./UserStyled";
 import Avatar from "../Avatar";
-import { Bold14Font } from "../fonts/Fonts";
+import { Bold24Font } from "../fonts/Fonts";
 import { withTheme } from "styled-components";
 import UserUsernameWrapper from "./UserUsernameWrapper";
+import UserAvatarWrapper from "./UserAvatarWrapper";
 
-const User = ({avatarUrl, username, myUser, oppositeUser, theme }) => {
+const User = ({ avatarUrl, username, myUser, oppositeUser, theme }) => {
   return (
     <UserPosition>
       <UserStyled>
-        <Avatar imgUrl={avatarUrl} />
+        <UserAvatarWrapper>
+          <Avatar imgUrl={avatarUrl} />
+        </UserAvatarWrapper>
         <UserUsernameWrapper>
-          <Bold14Font style={{ color: theme.colors.whiteColor }}>
+          <Bold24Font style={{ color: theme.colors.whiteColor }}>
             {username}
-          </Bold14Font>
+          </Bold24Font>
         </UserUsernameWrapper>
       </UserStyled>
     </UserPosition>

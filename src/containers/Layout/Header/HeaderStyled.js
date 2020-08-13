@@ -10,7 +10,6 @@ const HeaderStyled = styled.div`
 
   @media (min-width: 1200px) {
     flex-direction: column;
-    // align-items: start;
     ${(props) =>
       props.state.header.isHeaderSideBarPulled ? "align-items: start;" : null}
     padding: 39px 42px;

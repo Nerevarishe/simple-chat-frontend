@@ -12,7 +12,7 @@ const HeaderLogoutButtonWrapper = styled.div`
   @media (min-width: 1200px) {
     flex-direction: column;
     justify-content: flex-end;
-    width: unset;
+    // width: unset;
     height: 100%;
     margin: 0;
     font-size: 60px;
