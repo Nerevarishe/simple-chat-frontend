@@ -20,15 +20,26 @@ const reducer = (state, action) => {
         },
       };
 
-    case actions.TOGGLE_HEADER_SIDE_BAR:
+    case actions.SHOW_HEADER_SIDE_BAR:
       return {
         ...state,
         components: {
           ...state.components,
           header: {
             ...state.components.header,
-            isHeaderSideBarPulled: !state.components.header
-              .isHeaderSideBarPulled,
+            isHeaderSideBarPulled: true,
+          },
+        },
+      };
+
+    case actions.HIDE_HEADER_SIDE_BAR:
+      return {
+        ...state,
+        components: {
+          ...state.components,
+          header: {
+            ...state.components.header,
+            isHeaderSideBarPulled: false,
           },
         },
       };
