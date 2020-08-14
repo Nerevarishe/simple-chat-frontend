@@ -38,4 +38,8 @@ BaseButton.propTypes = {
   additionAction: PropTypes.func,
 };
 
+BaseButton.defaultProps = {
+  navigateToPath: "/",
+  additionAction: () => null,
+};
 export default BaseButton;
