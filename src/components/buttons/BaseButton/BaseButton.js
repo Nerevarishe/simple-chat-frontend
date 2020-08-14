@@ -4,11 +4,27 @@ import PropTypes from "prop-types";
 import BaseButtonStyled from "./BaseButtonStyled";
 import BaseButtonTextStyled from "./BaseButtonTextStyled";
 
-const BaseButton = ({ iconClassName, buttonText, navigateToPath }) => {
+const BaseButton = ({
+  iconClassName,
+  buttonText,
+  navigateToPath,
+  additionAction,
+}) => {
   let history = useHistory();
 
+  const onClickHandler = (additionActions, navigateToPath) => {
+    try {
+      additionActions();
+    } catch (e) {
+      console.log(e);
+    }
+    history.push(navigateToPath);
+  };
+
   return (
-    <BaseButtonStyled onClick={() => history.push(navigateToPath)}>
+    <BaseButtonStyled
+      onClick={() => onClickHandler(additionAction, navigateToPath)}
+    >
       <span className={iconClassName} />
       <BaseButtonTextStyled>{buttonText}</BaseButtonTextStyled>
     </BaseButtonStyled>
@@ -19,6 +35,7 @@ BaseButton.propTypes = {
   iconClassName: PropTypes.string,
   buttonText: PropTypes.string,
   navigateToPath: PropTypes.string,
+  additionAction: PropTypes.func,
 };
 
 export default BaseButton;

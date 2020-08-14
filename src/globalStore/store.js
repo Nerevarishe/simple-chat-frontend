@@ -4,7 +4,7 @@ import avatar from "../assets/img/svg/avatar.svg";
 
 const initialState = {
   auth: {
-    isAuth: true,
+    isAuth: false,
     username: "John Doe",
     avatarUrl: avatar,
   },

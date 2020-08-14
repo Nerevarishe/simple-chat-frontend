@@ -18,7 +18,6 @@ const Header = () => {
   const toggleSidebarHandler = () => {
     if (width >= 1200) {
       dispatch({ type: TOGGLE_HEADER_SIDE_BAR });
-      // console.log("isHeaderSideBarPulled: " + !state.components.header.isHeaderSideBarPulled)
     }
   };
 
@@ -28,7 +27,7 @@ const Header = () => {
       onMouseLeave={toggleSidebarHandler}
     >
       <HeaderStyled>
-        <User avatarUrl={state.auth.avatarUrl} username={state.auth.username}/>
+        <User avatarUrl={state.auth.avatarUrl} username={state.auth.username} />
         <HeaderNavigationButtonsPosition>
           <NavigationButtonsBlock />
         </HeaderNavigationButtonsPosition>
