@@ -4,8 +4,8 @@ import { rem } from "../../../utils/utils";
 
 const MainPosition = styled.main`
   min-width: 320px;
-  width: 100%;
-  min-height: 100vh;
+  width: 100vw;
+  height: 100vh;
   padding: ${rem("45px 16px")};
 
   @media (min-width: 1200px) {

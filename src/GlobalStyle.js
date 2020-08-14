@@ -51,7 +51,8 @@ const GlobalStyle = createGlobalStyle`
   html {
     box-sizing: border-box;
     font-size: 16px;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
   }
   *,
   *:before,
@@ -59,8 +60,9 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: inherit;
   }
   
-  body {
-    height: 100%;
+  body, #root {
+    width: 100vw;
+    height: 100vh;
   }
   
   img {
