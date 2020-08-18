@@ -12,8 +12,6 @@ const UserUsernameWrapper = styled.span`
 
   @media (min-width: 1200px) {
     font-size: 24px;
-    // display: ${(props) =>
-      props.state.header.isHeaderSideBarPulled ? "initial" : "none"};
     display: ${(props) =>
       props.messageCard
         ? "initial"
