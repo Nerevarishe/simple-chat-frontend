@@ -7,14 +7,21 @@ import { withTheme } from "styled-components";
 import UserUsernameWrapper from "./UserUsernameWrapper";
 import UserAvatarWrapper from "./UserAvatarWrapper";
 
-const User = ({ avatarUrl, username, myUser, oppositeUser, theme }) => {
+const User = ({ avatarUrl, username, messageCard, theme }) => {
   return (
     <UserPosition>
       <UserStyled>
         <UserAvatarWrapper>
           <Avatar imgUrl={avatarUrl} />
         </UserAvatarWrapper>
-        <UserUsernameWrapper style={{ color: theme.colors.whiteColor }}>
+        <UserUsernameWrapper
+          style={{
+            color: messageCard
+              ? theme.colors.blackColor
+              : theme.colors.whiteColor,
+          }}
+          type={messageCard ? "true" : "false"}
+        >
           {username}
         </UserUsernameWrapper>
       </UserStyled>
@@ -25,6 +32,7 @@ const User = ({ avatarUrl, username, myUser, oppositeUser, theme }) => {
 User.propTypes = {
   avatarUrl: PropTypes.string,
   username: PropTypes.string,
+  messageCard: PropTypes.bool,
 };
 
 export default withTheme(User);

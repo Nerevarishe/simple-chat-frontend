@@ -9,7 +9,6 @@ const MainPosition = styled.main`
   padding: ${rem("45px 16px")};
 
   @media (min-width: 1200px) {
-    // padding: 40px 65px 40px 209px;
     padding: 40px 65px 40px
       ${(props) =>
         props.state.header.isHeaderSideBarPulled ? "374px" : "209px"};
