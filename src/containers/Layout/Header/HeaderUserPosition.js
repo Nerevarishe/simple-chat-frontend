@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { rem } from "../../utils/utils";
+import { rem } from "../../../utils/utils";
 
-const UserPosition = styled.div`
+const HeaderUserPosition = styled.div`
   margin: ${rem("5px 8px")};
 
   @media (min-width: 1200px) {
@@ -12,4 +12,4 @@ const UserPosition = styled.div`
   }
 `;
 
-export default UserPosition;
+export default HeaderUserPosition;

@@ -12,6 +12,7 @@ import {
 import useWindowDimensions from "../../../hooks/useWindowDimensions";
 import { Context } from "../../../globalStore/store";
 import User from "../../../components/User";
+import HeaderUserPosition from "./HeaderUserPosition";
 
 const Header = () => {
   // eslint-disable-next-line no-unused-vars
@@ -43,7 +44,12 @@ const Header = () => {
       onMouseLeave={hideSidebarHandler}
     >
       <HeaderStyled>
-        <User avatarUrl={state.auth.avatarUrl} username={state.auth.username} />
+        <HeaderUserPosition>
+          <User
+            avatarUrl={state.auth.avatarUrl}
+            username={state.auth.username}
+          />
+        </HeaderUserPosition>
         <HeaderNavigationButtonsPosition>
           <NavigationButtonsBlock />
         </HeaderNavigationButtonsPosition>
