@@ -11,6 +11,7 @@ const chatMessages = [
     },
     message: {
       id: 1,
+      messageSender: "myMessage",
       messageBody:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
         "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
@@ -28,6 +29,7 @@ const chatMessages = [
     },
     message: {
       id: 2,
+      messageSender: "responseMessage",
       messageBody:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
         "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
@@ -48,6 +50,7 @@ const ChatPage = () => {
           key={element.message.id}
           username={element.user.username}
           userAvatarUrl={element.user.avatarUrl}
+          messageSender={element.message.messageSender}
           message={element.message.messageBody}
         />
       ))}

@@ -4,10 +4,10 @@ import ChatMessageCardStyled from "./ChatMessageCardStyled";
 import User from "../../User";
 import ChatMessage from "./ChatMessage";
 
-const ChatMessageCard = ({ username, userAvatarUrl, message }) => {
+const ChatMessageCard = ({ username, userAvatarUrl, message, messageSender }) => {
   return (
       <ChatMessageCardStyled>
-        <User username={username} avatarUrl={userAvatarUrl} messageCard />
+        <User username={username} avatarUrl={userAvatarUrl} messageCard={messageSender} />
         <ChatMessage message={message} />
       </ChatMessageCardStyled>
   );
@@ -16,7 +16,8 @@ const ChatMessageCard = ({ username, userAvatarUrl, message }) => {
 ChatMessage.propTypes = {
   username: PropTypes.string.isRequired,
   userAvatarUrl: PropTypes.string,
-  message: PropTypes.string.isRequired,
+  messageSender: PropTypes.string,
+  message: PropTypes.bool.isRequired,
 };
 
 export default ChatMessageCard;

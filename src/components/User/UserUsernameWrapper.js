@@ -1,14 +1,26 @@
 import styled from "styled-components";
 import withContext from "../../hoc/withContext";
-import {Bold14Font} from "../fonts/Fonts";
+import { rem } from "../../utils/utils";
 
-const UserUsernameWrapper = styled(Bold14Font)`
+const UserUsernameWrapper = styled.span`
   white-space: nowrap;
+  ${(props) => (props.messageCard ? "margin-top: " + rem("-15px") + ";" : null)}
+  color: ${(props) =>
+    props.messageCard
+      ? props.theme.colors.blackColor
+      : props.theme.colors.whiteColor};
 
   @media (min-width: 1200px) {
     font-size: 24px;
-    display: ${(props) =>
+    // display: ${(props) =>
       props.state.header.isHeaderSideBarPulled ? "initial" : "none"};
+    display: ${(props) =>
+      props.messageCard
+        ? "initial"
+        : props.state.header.isHeaderSideBarPulled
+        ? "initial"
+        : "none"};
+    
   }
 `;
 
