@@ -11,7 +11,7 @@ const ChatMessageCard = ({
   messageSender,
 }) => {
   return (
-    <ChatMessageCardStyled>
+    <ChatMessageCardStyled messageSender={messageSender}>
       <User
         username={username}
         avatarUrl={userAvatarUrl}
@@ -25,7 +25,7 @@ const ChatMessageCard = ({
 ChatMessage.propTypes = {
   username: PropTypes.string.isRequired,
   userAvatarUrl: PropTypes.string,
-  messageSender: PropTypes.string,
+  messageSender: PropTypes.oneOf([null, "myMessage", "responseMessage"]),
   message: PropTypes.string.isRequired,
 };
 
