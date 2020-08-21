@@ -9,6 +9,8 @@ const BaseButton = ({
   buttonText,
   navigateToPath,
   additionAction,
+  _style,
+  buttonType,
 }) => {
   let history = useHistory();
 
@@ -23,10 +25,15 @@ const BaseButton = ({
 
   return (
     <BaseButtonStyled
+      as={_style}
       onClick={() => onClickHandler(additionAction, navigateToPath)}
+      type={buttonType}
     >
       <span className={iconClassName} />
-      <BaseButtonTextStyled>{buttonText}</BaseButtonTextStyled>
+      {/*<BaseButtonTextStyled>{buttonText}</BaseButtonTextStyled>*/}
+      {buttonText ? (
+        <BaseButtonTextStyled>{buttonText}</BaseButtonTextStyled>
+      ) : null}
     </BaseButtonStyled>
   );
 };
@@ -36,10 +43,18 @@ BaseButton.propTypes = {
   buttonText: PropTypes.string,
   navigateToPath: PropTypes.string,
   additionAction: PropTypes.func,
+  _style: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.func,
+    PropTypes.object,
+  ]),
+  buttonType: PropTypes.oneOf(["button", "submit", "reset"]),
 };
 
 BaseButton.defaultProps = {
   navigateToPath: "/",
   additionAction: () => null,
+  _style: "",
+  buttonType: "button",
 };
 export default BaseButton;
