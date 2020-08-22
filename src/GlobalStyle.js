@@ -50,9 +50,6 @@ const GlobalStyle = createGlobalStyle`
   
   html {
     box-sizing: border-box;
-    font-size: 16px;
-    width: 100vw;
-    height: 100vh;
   }
   *,
   *:before,
@@ -60,14 +57,21 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: inherit;
   }
   
-  body, #root {
-    width: 100vw;
+  html {
+    font-size: 16px;
+  }
+  
+  html, body, #root {
     height: 100vh;
   }
   
   img {
     vertical-align: bottom;
   }
+  
+  // * {
+  //   border: 1px solid #f00 !important;
+  // }
   
   @media (min-width: 768px) {
     html {
