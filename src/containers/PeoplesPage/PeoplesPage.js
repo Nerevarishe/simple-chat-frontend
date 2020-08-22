@@ -1,10 +1,45 @@
-import React from 'react';
+import React, { Fragment } from "react";
+import avatar from "../../assets/img/svg/avatar.svg";
+import PeopleCard from "../../components/cards/PeopleCard";
+import PeoplesPageCardPosition from "./PeoplesPageCardPosition";
+
+const peopleInChat = [
+  {
+    user: {
+      id: 1,
+      username: "John Doe",
+      avatarUrl: avatar,
+    },
+  },
+  {
+    user: {
+      id: 2,
+      username: "Jane Doe",
+      avatarUrl: avatar,
+    },
+  },
+  {
+    user: {
+      id: 3,
+      username: "Jim Doe",
+      avatarUrl: avatar,
+    },
+  },
+];
 
 const PeoplesPage = () => {
   return (
-    <div>
-      <h1>PeoplesPage</h1>
-    </div>
+    <Fragment>
+      {peopleInChat.map((el) => (
+        <PeoplesPageCardPosition>
+          <PeopleCard
+            key={el.user.id}
+            username={el.user.username}
+            avatarUrl={el.user.avatarUrl}
+          />
+        </PeoplesPageCardPosition>
+      ))}
+    </Fragment>
   );
 };
 

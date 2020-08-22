@@ -6,7 +6,7 @@ import UserUsernameWrapper from "./UserUsernameWrapper";
 import UserAvatarWrapper from "./UserAvatarWrapper";
 import { Bold14Font, Regular10Font } from "../fonts/Fonts";
 
-const User = ({ avatarUrl, username, messageCard }) => {
+const User = ({ avatarUrl, username, messageCard, textBlack }) => {
   return (
     <UserStyled>
       <UserAvatarWrapper>
@@ -15,6 +15,7 @@ const User = ({ avatarUrl, username, messageCard }) => {
       <UserUsernameWrapper
         as={messageCard ? Regular10Font : Bold14Font}
         messageCard={messageCard}
+        textBlack={textBlack}
       >
         {username}
       </UserUsernameWrapper>
@@ -26,10 +27,12 @@ User.propTypes = {
   avatarUrl: PropTypes.string,
   username: PropTypes.string,
   messageCard: PropTypes.oneOf([null, "myMessage", "responseMessage"]),
+  textBlack: PropTypes.bool,
 };
 
 User.defaultProps = {
   messageCard: null,
+  textBlack: false,
 };
 
 export default User;
