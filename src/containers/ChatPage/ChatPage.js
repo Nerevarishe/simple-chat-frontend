@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useEffect, useRef, useState } from "react";
 import io from "socket.io-client";
 import ChatMessageCard from "../../components/cards/ChatMessageCard";
 import avatar from "../../assets/img/svg/avatar.svg";
@@ -157,6 +157,7 @@ const socketio = io("http://127.0.0.1:5000/chat");
 const ChatPage = () => {
   const [message, setMessage] = useState("");
   const [response, setResponse] = useState(chatMessages);
+  const messagesEndRef = useRef(null);
 
   const onChangeHandler = (event) => {
     setMessage(event.target.value);
@@ -168,13 +169,18 @@ const ChatPage = () => {
     event.preventDefault();
   };
 
+  const scrollToBottom = () => {
+    messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
   useEffect(() => {
     const socketio = io("http://127.0.0.1:5000/chat");
     socketio.on("send_message", (data) => {
-      setResponse(prevState => [...prevState, data]);
+      setResponse((prevState) => [...prevState, data]);
     });
+    scrollToBottom();
     return () => socketio.disconnect();
-  }, []);
+  }, [response]);
 
   return (
     <Fragment>
@@ -188,6 +194,7 @@ const ChatPage = () => {
             message={element.message.messageBody}
           />
         ))}
+        <div ref={messagesEndRef} />
       </ChatMessageCardsPosition>
       <TypeMessageForm
         formSubmitHandler={submitMessageHandler}
