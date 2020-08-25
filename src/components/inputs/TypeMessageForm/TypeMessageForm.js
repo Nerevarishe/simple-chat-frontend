@@ -5,11 +5,11 @@ import TypeMessageFormPosition from "./TypeMessageFormPosition";
 import SendMessageButton from "../../buttons/SendMessageButton";
 import TypeMessageFormSendButtonPosition from "./TypeMessageFormSendButtonPosition";
 
-const TypeMessageForm = ({ formSubmitHandler }) => {
+const TypeMessageForm = ({ formSubmitHandler, onChangeHandler, data }) => {
   return (
     <TypeMessageFormPosition>
       <form onSubmit={formSubmitHandler}>
-        <TypeMessageInput />
+        <TypeMessageInput onChangeHandler={onChangeHandler} data={data} />
         <TypeMessageFormSendButtonPosition>
           <SendMessageButton />
         </TypeMessageFormSendButtonPosition>

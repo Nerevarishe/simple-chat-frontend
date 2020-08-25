@@ -1,4 +1,5 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect, useState } from "react";
+import io from "socket.io-client";
 import ChatMessageCard from "../../components/cards/ChatMessageCard";
 import avatar from "../../assets/img/svg/avatar.svg";
 import ChatMessageCardsPosition from "../../components/cards/ChatMessageCard/ChatMessageCardsPosition";
@@ -151,16 +152,34 @@ const chatMessages = [
   },
 ];
 
+const socketio = io("http://127.0.0.1:5000/chat");
+
 const ChatPage = () => {
-  const submitMessageHandler = (event) => {
-    event.preventDefault();
-    console.log("send message");
+  const [message, setMessage] = useState("");
+  const [response, setResponse] = useState(chatMessages);
+
+  const onChangeHandler = (event) => {
+    setMessage(event.target.value);
   };
+
+  const submitMessageHandler = (event) => {
+    socketio.emit("send_message", message);
+    setMessage("");
+    event.preventDefault();
+  };
+
+  useEffect(() => {
+    const socketio = io("http://127.0.0.1:5000/chat");
+    socketio.on("send_message", (data) => {
+      setResponse(prevState => [...prevState, data]);
+    });
+    return () => socketio.disconnect();
+  }, []);
 
   return (
     <Fragment>
       <ChatMessageCardsPosition>
-        {chatMessages.map((element) => (
+        {response.map((element) => (
           <ChatMessageCard
             key={element.message.id}
             username={element.user.username}
@@ -170,7 +189,11 @@ const ChatPage = () => {
           />
         ))}
       </ChatMessageCardsPosition>
-      <TypeMessageForm formSubmitHandler={submitMessageHandler} />
+      <TypeMessageForm
+        formSubmitHandler={submitMessageHandler}
+        onChangeHandler={onChangeHandler}
+        data={message}
+      />
     </Fragment>
   );
 };
